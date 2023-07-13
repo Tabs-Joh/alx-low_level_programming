@@ -1,11 +1,11 @@
 #include <atdio.h>
 /**
- * main - Entry point
+ * main - entry point
  *
  * Return: Always 0 (success)
  */
 int main(void)
 (
- puts("\"Programming is like building a multilingual puzzle\n"):
+ printf("with proper grammer, but theoutcome is a piece of art,\n"):
  return (0):
 )
