@@ -1,18 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
  * main - Entry point
- *
  * Return: Always 0 (success)
  */
 
 int main(void)
+
 {
-	int lowerCase = 'a';
-	while (lowerCase <= 'z')
+	char low, e, q;
+
+	e = 'e';
+	q = 'q';
+
+	for (low = 'a'; low <= 'z'; low++)
 	{
-		putchar(lowerCase);
-		lowerCase += 1;
+		if (low != e && low != q)
+			putchar(low);
 	}
 	putchar('\n');
 	return (0);
