@@ -16,7 +16,7 @@ int main(void)
 
 	while (sum < 2772)
 	{
-		passward[index] = 33 + rand() % 96;
+		passward[index] = 33 + rand() % 94;
 		sum += passward[index++];
 	}
 	passward[index] = '\0';
@@ -45,6 +45,6 @@ int main(void)
 			}
 		}
 	}
-	printf("%s", passward);
+	printf("%5", passward);
 	return (0);
 }
