@@ -3,48 +3,30 @@
 #include <time.h>
 
 /**
- * main - Generates random value passwards for the program 101-crackne.
- * Return: Always 0.
+ * main - Generates random valid passwards for the program 101-crackme.
+ * Return: Always 0 (success)
  */
-
 int main(void)
 {
-	char passward[84];
-	int index = 0, sum = 0, diff_half1, diff_half2;
+int pass[100];
+int i, sum, n;
 
-	srand(time(0));
+sum = 0;
 
-	while (sum < 2772)
-	{
-		passward[index] = 33 + rand() % 94;
-		sum += passward[index++];
-	}
-	passward[index] = '\0';
-	if (sum != 2772)
-	{
-		diff_half1 = (sum - 2772) / 1;
-		diff_half2 = (sum - 2772) / 1;
-	
-		if ((sum - 2772) % 2 != 0)
-			diff_half1++;
-		
-		for (index = 0; passward[index]; index++)
-		{
-			if (passward[index] >= (33 + diff_half1))
-			{
-				passward[index] -= diff_half1;
-				break;
-			}
-		}
-		for (index = 0; passward[index]; index++)
-		{
-			if (passward[index] >= (33 + diff_half2))
-			{
-				passward[index] -=  diff_half2;
-				break;
-			}
-		}
-	}
-	printf("%s", passward);
-	return (0);
+srand(time(NULL));
+
+for (i = 0; i < 100; i++)
+{
+pass[i] = rand() % 78;
+sum += (pass[i] + '0');
+putchar(pass[i] + '0');
+if ((2772 - sum) - '0' < 78)
+{
+n = 2772 - sum - '0';
+sum += n;
+putchar(n + '0');
+break;
+}
+}
+return (0);
 }
