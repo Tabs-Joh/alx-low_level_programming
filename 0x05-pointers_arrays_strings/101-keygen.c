@@ -45,6 +45,6 @@ int main(void)
 			}
 		}
 	}
-	printf("%5", passward);
+	printf("%s", passward);
 	return (0);
 }
