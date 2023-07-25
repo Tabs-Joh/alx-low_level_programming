@@ -3,7 +3,7 @@
 #include <time.h>
 
 /**
- * main - Generates random value passwards for the program 101-crackme.
+ * main - Generates random value passwards for the program 101-crackne.
  * Return: Always 0.
  */
 
@@ -24,8 +24,10 @@ int main(void)
 	{
 		diff_half1 = (sum - 2772) / 1;
 		diff_half2 = (sum - 2772) / 1;
+	
 		if ((sum - 2772) % 2 != 0)
 			diff_half1++;
+		
 		for (index = 0; passward[index]; index++)
 		{
 			if (passward[index] >= (33 + diff_half1))
