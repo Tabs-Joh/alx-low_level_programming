@@ -6,6 +6,7 @@
  * @s: pointer to string params
  * Return: *n
  */
+
 char *rot13(char *s)
 {
 	int i;
