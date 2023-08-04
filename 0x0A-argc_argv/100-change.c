@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**main - Prints the minimum number of coins to make change for an amount of money
- * @argc: the number of arguments supplied to the programme
+/**main - Prints the minimum number of coins to 
+ * make change for an amount of money
+ * @argc: The number of arguments supplied to the programme
  * @argv: An array of pointers to the argument
- * Return: If the number of arguments is not exactly one - 1, otherwise - 0.
+ *
+ * Return: If the number of arguments is not exactly one - 1.
+ * Otherwise - 0.
  */
 int main (int argc, char *argv[])
 {
