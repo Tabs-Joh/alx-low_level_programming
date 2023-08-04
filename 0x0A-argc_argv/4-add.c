@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 	int i;
 	unsigned int k, sum = 0;
 	char *e;
+	
 	if (argc > 1)
 	{
 		for (i = 1; i < argc; i++)
@@ -24,13 +25,15 @@ int main(int argc, char *argv[])
 			{
 		if (e[k] < 48 || e[k] > 57)
 		{
-	printf("error\n");
+	printf("Error\n");
 return (1);
 		}
 			}
+
 			sum += atoi(e);
 			e++;
 		}
+
 		printf("%d\n", sum);
 	}
 	else
