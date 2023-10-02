@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 char *create_buffer(char *file);
-void close_file(int ft);
+void close_file(int fd);
 
 /**
  * create_buffer - used to allocate 1024 bytes of a buffer
@@ -30,15 +30,15 @@ char *create_buffer(char *file)
  * close_file - closes all file descriptors.
  * @ft: file descriptores that are to be closed
  */
-void close_file(int ft)
+void close_file(int fd)
 {
 	int l;
 
-	l = close(ft);
+	l = close(fd);
 
 	if (l == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close ft %d\n", ft);
+		dprintf(STDERR_FILENO, "Error: Can't close ft %d\n", fd);
 		exit(100);
 	}
 }
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	buffer = create_file(argv[2]);
+	buffer = create_buffer(argv[2]);
 	from = open(argv[1], O_RDONLY);
 	r = read(from, buffer, 1024);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 		if (from == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO,
-					"Error: Can't read from file %s\n", argc[1]);
+					"Error: Can't read from file %s\n", argv[1]);
 			free(buffer);
 			exit(98);
 		}
