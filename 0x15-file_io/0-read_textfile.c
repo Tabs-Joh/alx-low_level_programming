@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * read_textfile - reads a text file print to stdout
+ * read_textfile - reads a text file print to STDOUT
  * @filename: text file that is being read and printed
  * @letters: number of letters that are to be read
  *
@@ -11,19 +11,19 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char *but;
-	ssize_t ft;
+	char *buf;
+	ssize_t fd;
 	ssize_t w;
-	ssize_t r;
+	ssize_t t;
 
-	ft = open(filename, O_RDONLY);
-	if (ft == 1)
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
 		return (0);
-	but = malloc(sizeof(char) * letters);
-	r = read(ft, but, letters);
-	w = write(STDOUT_FILENO, but, r);
+	buf = malloc(sizeof(char) * letters);
+	t = read(fd, buf, letters);
+	w = write(STDOUT_FILENO, buf, t);
 
-	free(but);
-	close(ft);
+	free(buf);
+	close(fd);
 	return (w);
 }
